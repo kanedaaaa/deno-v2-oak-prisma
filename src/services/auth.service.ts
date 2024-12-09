@@ -27,7 +27,7 @@ class AuthService {
     try {
       const user = await createUser(payload);
       return user.email;
-    } catch (err: unknown) {
+    } catch (err: any) {
       throw new CustomError(err);
     }
   }
@@ -60,7 +60,7 @@ class AuthService {
       );
 
       return jwt;
-    } catch (err: unknown) {
+    } catch (err: any) {
       throw new CustomError(err);
     }
   }

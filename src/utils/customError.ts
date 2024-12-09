@@ -4,20 +4,22 @@ class CustomError extends Error {
   public statusCode: number;
 
   constructor(
-    // undefined when server doesn't needs to know
-    // unknown or string by default
-    serverMessage: string | undefined | unknown,
+    serverMessage: string | undefined = undefined,
     clientMessage: string = "Something Went Wrong",
     statusCode: number = 500,
   ) {
-    super(typeof serverMessage === "string" ? serverMessage : clientMessage);
+    // Use clientMessage as the base error message if serverMessage is not a string
+    super(serverMessage || clientMessage);
 
-    this.serverMessage = typeof serverMessage === "string"
-      ? serverMessage
-      : undefined;
+    // Ensure type safety
+    this.serverMessage = serverMessage;
     this.clientMessage = clientMessage;
     this.statusCode = statusCode;
 
+    // Maintain prototype chain for proper instanceof checks
+    Object.setPrototypeOf(this, CustomError.prototype);
+
+    // Capture stack trace
     Error.captureStackTrace(this, this.constructor);
   }
 }
