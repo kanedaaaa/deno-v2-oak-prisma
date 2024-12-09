@@ -1,6 +1,6 @@
 # Deno Stuff
 
-Finally tried to try Deno, so i will keep this code base for reference for
+Finally decided to try Deno, so i will keep this code base for reference for
 future projects.
 
 This one will probably contain full authentication/authorization logic with Oak
