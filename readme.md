@@ -4,7 +4,7 @@ Finally tried to try Deno, so i will keep this code base for reference for
 future projects.
 
 This one will probably contain full authentication/authorization logic with Oak
-and some ORM, probably oAuth in future, to test stuff out. Might even work as
+and raw SQL, probably oAuth in future, to test stuff out. Might even work as
 portfolio project.
 
 ---
