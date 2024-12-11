@@ -1,9 +1,17 @@
 {
   "tasks": {
     "dev": "deno run --watch src/index.ts",
-    "format": "deno fmt"
+    "format": "deno fmt",
+    "drizzle:generate": "deno run -A --node-modules-dir npm:drizzle-kit generate",
+    "drizzle:migrate": "deno run -A --node-modules-dir npm:drizzle-kit migrate"
   },
   "compilerOptions": {
     "noImplicitAny": false
+  },
+  "imports": {
+    "@types/pg": "npm:@types/pg@^8.11.10",
+    "drizzle-kit": "npm:drizzle-kit@^0.30.0",
+    "drizzle-orm": "npm:drizzle-orm@^0.38.0",
+    "pg": "npm:pg@^8.13.1"
   }
 }
